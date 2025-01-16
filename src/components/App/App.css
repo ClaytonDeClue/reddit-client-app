@@ -32,20 +32,12 @@
   --radius-2: 8px;
 }
 
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #f6f7f8;
+html,
+body {
+  background: var(--color-background);
+  color: var(--color-text-body);
 }
 
-/* Ensure main content does not touch the edges */
-main {
-  width: 100%;
-  padding: 20px;
+p {
+  margin: 0;
 }
