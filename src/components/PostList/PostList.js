@@ -7,13 +7,7 @@ const PostList = ({ posts }) => {
         <div className="post-list">
             {posts.map((post, index) => (
                 <PostCard 
-                    key={index}
-                    title={post.title}
-                    upvotes={post.upvotes}
-                    image={post.image}
-                    username={post.username}
-                    time={post.time}
-                    comments={post.comments}
+                    post={post}
                 />
             ))}
         </div>
