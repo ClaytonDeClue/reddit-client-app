@@ -10,6 +10,9 @@ import {
 } from "react-icons/ti";
 import moment from 'moment';
 import shortenNumber from "../../utils/shortenNumber";
+import Avatar from "../Avatar/Avatar";
+import Card from "../Card/Card";
+import Comment from "../Comment/Comment";
 
 const PostCard = ({ post, onToggleComments }) => {
   const [voteValue, setVoteValue] = useState(0);
@@ -52,42 +55,42 @@ const PostCard = ({ post, onToggleComments }) => {
     return '';
   };
 
-  // const renderComments = () => {
-  //   if (post.errorComments) {
-  //     return (
-  //       <div>
-  //         <h3>Error loading comments</h3>
-  //       </div>
-  //     );
-  //   }
+  const renderComments = () => {
+    if (post.errorComments) {
+      return (
+        <div>
+          <h3>Error loading comments</h3>
+        </div>
+      );
+    }
 
-  //   if (post.loadingComments) {
-  //     return (
-  //       <div>
-  //         <Skeleton />
-  //         <Skeleton />
-  //         <Skeleton />
-  //         <Skeleton />
-  //       </div>
-  //     );
-  //   }
+    if (post.loadingComments) {
+      return (
+        <div>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </div>
+      );
+    }
 
-  //   if (post.showingComments) {
-  //     return (
-  //       <div>
-  //         {post.comments.map((comment) => (
-  //           <Comment comment={comment} key={comment.id} />
-  //         ))}
-  //       </div>
-  //     );
-  //   }
+    if (post.showingComments) {
+      return (
+        <div>
+          {post.comments.map((comment) => (
+            <Comment comment={comment} key={comment.id} />
+          ))}
+        </div>
+      );
+    }
 
-  //   return null;
-  // };
+    return null;
+  };
 
   return (
     <article key={post.id}>
-      {/* <Card> */}
+      <Card>
         <div className="post-wrapper">
           <div className="post-votes-container">
             <button
@@ -123,7 +126,7 @@ const PostCard = ({ post, onToggleComments }) => {
 
             <div className="post-details">
               <span className="author-details">
-                {/* <Avatar name={post.author} /> */}
+                <Avatar name={post.author} />
                 <span className="author-username">{post.author}</span>
               </span>
               <span>{moment.unix(post.created_utc).fromNow()}</span>
@@ -133,7 +136,7 @@ const PostCard = ({ post, onToggleComments }) => {
                   className={`icon-action-button ${
                     post.showingComments && 'showing-comments'
                   }`}
-                  // onClick={() => onToggleComments(post.permalink)}
+                  onClick={() => onToggleComments(post.permalink)}
                   aria-label="Show comments"
                 >
                   <TiMessage className="icon-action" />
@@ -142,10 +145,10 @@ const PostCard = ({ post, onToggleComments }) => {
               </span>
             </div>
 
-            {/* {renderComments()} */}
+            {renderComments()}
           </div>
         </div>
-      {/* </Card> */}
+      </Card>
     </article>
   );
 };
