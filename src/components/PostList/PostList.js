@@ -1,5 +1,5 @@
 import React from "react";
-import PostCard from "../PostCard/PostCard";
+import Post from "../Post/Post";
 import "./PostList.css";
 
 const PostList = ({ posts }) => {
@@ -15,7 +15,7 @@ const PostList = ({ posts }) => {
   return (
     <>
       {posts.map((post, index) => (
-        <PostCard
+        <Post
           key={post.id}
           post={post}
           onToggleComments={onToggleComments(index)}

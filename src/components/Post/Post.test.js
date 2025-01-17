@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import PostCard from "./PostCard";
+import Post from "./Post";
 
-describe("PostCard Component", () => {
+describe("Post Component", () => {
   const fakePost = {
     title: "Getting paid on the Wall of Death in Rajkot, India",
     upvotes: 35800,
@@ -15,7 +15,7 @@ describe("PostCard Component", () => {
 
   test("renders all post details correctly", () => {
     render(
-      <PostCard
+      <Post
         title={fakePost.title}
         upvotes={fakePost.upvotes}
         image={fakePost.image}
@@ -37,7 +37,7 @@ describe("PostCard Component", () => {
 
   test("does not render an image if none is provided", () => {
     render(
-      <PostCard
+      <Post
         title={fakePost.title}
         upvotes={fakePost.upvotes}
         username={fakePost.username}
