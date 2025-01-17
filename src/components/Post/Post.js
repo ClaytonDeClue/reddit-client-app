@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Skeleton from 'react-loading-skeleton';
-import "./PostCard.css";
+import "./Post.css";
 import {
   TiArrowUpOutline,
   TiArrowUpThick,
@@ -14,7 +14,7 @@ import Avatar from "../Avatar/Avatar";
 import Card from "../Card/Card";
 import Comment from "../Comment/Comment";
 
-const PostCard = ({ post, onToggleComments }) => {
+const Post = ({ post, onToggleComments }) => {
   const [voteValue, setVoteValue] = useState(0);
 
   /**
@@ -153,4 +153,4 @@ const PostCard = ({ post, onToggleComments }) => {
   );
 };
 
-export default PostCard;
+export default Post;

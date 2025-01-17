@@ -23,14 +23,14 @@ const fakePosts = [
 ];
 
 describe("PostList Component", () => {
-  test("renders the correct number of PostCard components", () => {
+  test("renders the correct number of Post components", () => {
     render(<PostList posts={fakePosts} />);
 
-    const postCards = screen.getAllByRole("heading"); // Assuming each post has a title inside an h2
-    expect(postCards).toHaveLength(fakePosts.length);
+    const posts = screen.getAllByRole("heading"); // Assuming each post has a title inside an h2
+    expect(posts).toHaveLength(fakePosts.length);
   });
 
-  test("each PostCard receives correct data", () => {
+  test("each Post receives correct data", () => {
     render(<PostList posts={fakePosts} />);
 
     fakePosts.forEach((post) => {
