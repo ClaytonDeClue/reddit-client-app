@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "../Header/Header";
 import PostList from "../PostList/PostList";
+import Subreddits from "../Subreddits/Subreddits";
 
 const fakePosts = [
   {
@@ -40,6 +41,9 @@ const App = () => {
       <main>
         <PostList posts={fakePosts} />
       </main>
+      <aside>
+        <Subreddits />
+      </aside>
     </>
   );
 };
